@@ -1,0 +1,24 @@
+<script>
+    {% comment %} {%if show_alert%}
+
+        alert('Aceita cookies?')
+        console.log(document.cookie)
+        
+    {% endif %} {% endcomment %}
+
+    function getCookie(name){
+        let cookie = {};
+        document.cookie.split(';').forEach(function(el){
+            let [k,v] = el.split('=');
+            cookie[k.trim()] = v;
+            })
+
+        return cookie[name];    
+    }
+
+    getCookie('view')
+    if (getCookie('view')){
+        alert('Aceita cookies?')
+    }
+
+</script>
